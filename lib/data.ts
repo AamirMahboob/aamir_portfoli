@@ -4,8 +4,9 @@ import piqlaportal from "../app/piqlaportal.png";
 import digicash from "../app/digicash.png";
 import archiwiz from "../app/archiwizportal.webp";
 import safesolution from "../app/safesolution.png";
-import bactelem from "../app/bactelem.png";
+import bactelem from "../app/Bactelem.png";
 import ledgerflow from "../app/ledgerflow.png";
+
 export const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
