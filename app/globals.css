@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --bg: #060b14;
+  --bg2: #0a1120;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --accent: #00d4ff;
+  --accent2: #7c3aed;
+  --accent3: #f59e0b;
+  --text: #e2e8f0;
+  --muted: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent2);
+  border-radius: 3px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@layer utilities {
+  .card-base {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  .animate-spin-react {
+    animation: spin 6s linear infinite;
+  }
+
+  .hero-floating-icon {
+    opacity: 0.35;
+    filter: blur(3px);
+    transition: opacity 0.3s ease;
+  }
+
+  @media (min-width: 640px) {
+    .hero-floating-icon {
+      opacity: 0.45;
+      filter: blur(4px);
+    }
+  }
+
+  .hero-outline-title {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+
+  .testimonial-outline {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.95);
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .testimonial-glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .diamond-grid-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.35'/%3E%3C/svg%3E");
+    background-size: 28px 28px;
+  }
+
+
+  .testimonial-nav-btn {
+    @apply w-11 h-11 rounded-full flex items-center justify-center text-white/90
+      bg-white/5 border border-white/10 backdrop-blur-md
+      transition-all duration-200 hover:bg-white/10 hover:border-white/20 hover:scale-105;
+  }
+
+  .testimonials-carousel .slick-list {
+    overflow: hidden;
+    padding: 4px 0 8px;
+  }
+
+  .testimonials-carousel .slick-track {
+    display: flex;
+    align-items: stretch;
+  }
+}
