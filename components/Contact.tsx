@@ -16,8 +16,30 @@ type ContactForm = {
 export default function Contact() {
   const [form] = Form.useForm<ContactForm>();
 
+  // const onFinish = async (values: ContactForm) => {
+  //   try {
+  //     const res = await fetch("http://localhost:5678/webhook-test/contact", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(values),
+  //     });
+  
+  //     if (res.ok) {
+  //       message.success("Message sent successfully!");
+  //       form.resetFields();
+  //     } else {
+  //       message.error("Failed to send message.");
+  //     }
+  //   } catch (error) {
+  //     message.error("Something went wrong.");
+  //   }
+  // };
+
   const onFinish = async (values: ContactForm) => {
     try {
+      // Point this to your relative internal Next.js API route
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -33,6 +55,7 @@ export default function Contact() {
         message.error("Failed to send message.");
       }
     } catch (error) {
+      console.error(error);
       message.error("Something went wrong.");
     }
   };
