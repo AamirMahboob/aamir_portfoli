@@ -11,6 +11,7 @@ import { SectionGlows } from "@/components/ui/SectionDecor";
 import { Button, Tag } from "antd";
 import Image from "next/image";
 import profileImage from "../app/image.jpeg";
+import aamir from "../app/aamir.jpeg";
 import { TypeAnimation } from "react-type-animation";
 
 const socials = [
@@ -145,7 +146,7 @@ export default function Hero() {
             />
             <div className="w-full h-full rounded-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#7dd3fc]/40 via-[#38bdf8]/20 to-[#0d1829] border-[3px] border-white/20 shadow-[0_0_60px_rgba(0,212,255,0.25)]">
               <Image
-                src={profileImage}
+                src={aamir}
                 alt="Aamir Mahboob"
                 width={300}
                 height={300}
